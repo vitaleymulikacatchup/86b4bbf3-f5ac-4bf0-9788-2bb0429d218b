@@ -1,12 +1,13 @@
 "use client";
 
+import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 import NavbarStyleApple from '@/components/navbar/NavbarStyleApple/NavbarStyleApple';
 import HeroCarouselLogo from '@/components/sections/hero/heroCarouselLogo/HeroCarouselLogo';
 import TagAbout from '@/components/sections/about/TagAbout';
 import FeatureCardEight from '@/components/sections/feature/FeatureCardEight';
 import ProductCardOne from '@/components/sections/product/ProductCardOne';
 import PricingCardThree from '@/components/sections/pricing/PricingCardThree';
-import MetricCardTwo from '@/components/sections/metric/MetricCardTwo';
+import MetricCardTwo from '@/components/sections/metrics/MetricCardTwo';
 import TeamCardOne from '@/components/sections/team/TeamCardOne';
 import TestimonialCardThree from '@/components/sections/testimonial/TestimonialCardThree';
 import SocialProofOne from '@/components/sections/socialProof/SocialProofOne';
@@ -14,11 +15,22 @@ import FaqBase from '@/components/sections/faq/FaqBase';
 import BlogCardOne from '@/components/sections/blog/BlogCardOne';
 import ContactCenter from '@/components/sections/contact/ContactCenter';
 import FooterSocial from '@/components/sections/footer/FooterSocial';
-import { BarChart3, BookOpen, HelpCircle, Package, Quote, Rocket, Shield, Star, Trophy, Users, Zap } from "lucide-react";
+import { BarChart3, BookOpen, HelpCircle, Package, Quote, Rocket, Shield, Star, Trophy, Users, Zap, Twitter, Linkedin } from "lucide-react";
 
 export default function F1PresentationsPage() {
   return (
-    <>
+    <ThemeProvider
+      defaultButtonVariant="icon-arrow"
+      defaultTextAnimation="background-highlight"
+      borderRadius="rounded"
+      contentWidth="small"
+      sizing="large"
+      background="gradientBars"
+      cardStyle="gradient-bordered"
+      primaryButtonStyle="layered-depth"
+      secondaryButtonStyle="layered"
+      showBlurBottom={false}
+    >
       <div id="nav" data-section="nav">
         <NavbarStyleApple
           navItems={[
@@ -459,11 +471,11 @@ export default function F1PresentationsPage() {
             }
           ]}
           socialLinks={[
-            {icon: "Twitter", href: "https://twitter.com/f1presentations", ariaLabel: "Follow us on Twitter"},
-            {icon: "Linkedin", href: "https://linkedin.com/company/f1presentations", ariaLabel: "Connect on LinkedIn"}
+            {icon: Twitter, href: "https://twitter.com/f1presentations", ariaLabel: "Follow us on Twitter"},
+            {icon: Linkedin, href: "https://linkedin.com/company/f1presentations", ariaLabel: "Connect on LinkedIn"}
           ]}
         />
       </div>
-    </>
+    </ThemeProvider>
   );
 }

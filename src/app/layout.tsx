@@ -4,7 +4,6 @@ import { Prata } from "next/font/google";
 import "./globals.css";
 import { PostHogWrapper } from "@/components/PostHogWrapper";
 import Tag from "@/tag/Tag";
-import ThemeProvider from "@/providers/themeProvider/ThemeProvider";
 
 const interTight = Inter_Tight({
   variable: "--font-inter-tight",
@@ -58,21 +57,8 @@ export default function RootLayout({
     <html lang="en">
       <PostHogWrapper>
         <body className={`${prata.variable} antialiased`}>
-          <ThemeProvider
-            defaultButtonVariant="icon-arrow"
-            defaultTextAnimation="background-highlight"
-            borderRadius="rounded"
-            contentWidth="small"
-            sizing="large"
-            background="gradientBars"
-            cardStyle="gradient-bordered"
-            primaryButtonStyle="layered-depth"
-            secondaryButtonStyle="layered"
-            showBlurBottom={false}
-          >
-            <Tag />
-            {children}
-          </ThemeProvider>
+          <Tag />
+          {children}
         
         <script
           dangerouslySetInnerHTML={{
